@@ -144,3 +144,18 @@ function multiplyArray(array) {
 };
 
 console.log(`js-functions-lab #5: multiplyArray([2, 4, 5]) === ${multiplyArray([2, 4, 5])} `);
+
+
+// 6.
+// Define a function, as a function expression, numArgs that returns the number of arguments passed to the function when called.
+
+// define a function named numArgs with an unspecified number of arguements
+const numArgs = function() {
+    //return the length or number of arguments placed in the function
+    return arguments.length;
+};
+
+//print string and execute the function which will return the length of the arguments
+console.log(`js-function-lab #6: numArgs(5, "hello", false) === ${numArgs(5, "hello", false)}`);
+
+
