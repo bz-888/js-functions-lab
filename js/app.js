@@ -1,0 +1,1 @@
+console.log("This is the console output of js-functions-lab.");
