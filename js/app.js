@@ -115,3 +115,17 @@ console.log(`js-functions-lab #3: O is a vowel. True or false? ${isCharAVowel("O
 console.log(`js-functions-lab #3: B is a vowel. True or false? ${isCharAVowel("b")}`);
 
 
+// 4.
+// Define a function, as a function expression, sumArray that takes an array of numbers and returns the sum of those numbers. For example, sumArray([2, 4, 5]); would return 11.
+
+const sumArray = function(array) {
+    let sum = 0;
+
+    array.forEach(function(num) {
+        sum += num;
+    })
+
+    return sum;
+};
+
+console.log(`js-functinos-lab #4: sumArray([1, 2, 3, -1]) = ${sumArray([1, 2, 3, -1])}`);
