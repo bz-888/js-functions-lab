@@ -128,4 +128,19 @@ const sumArray = function(array) {
     return sum;
 };
 
-console.log(`js-functinos-lab #4: sumArray([1, 2, 3, -1]) = ${sumArray([1, 2, 3, -1])}`);
+console.log(`js-functinos-lab #4: sumArray([1, 2, 3, -1]) === ${sumArray([1, 2, 3, -1])}`);
+
+
+// 5.
+// Define a function, as a function declaration, multiplyArray that takes an array of numbers and returns the product those numbers. For example, multiplyArray([2, 4, 5]); would return 40.
+
+function multiplyArray(array) {
+    let product = 1;
+    array.forEach(function(num) {
+        product = product * num;
+    });
+
+    return product;
+};
+
+console.log(`js-functions-lab #5: multiplyArray([2, 4, 5]) === ${multiplyArray([2, 4, 5])} `);
