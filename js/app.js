@@ -52,9 +52,11 @@ playerFour = getPlayerUserName('Kevin');
 
 
 
+
 // js-functions-lab
 
 // 1.
+// Define a function, as a function declaration, maxOfTwoNumbers that takes two numbers as arguments and returns the largest of them. If they are the same, return that number. Use the if-else construct or a ternary expression - the Math.max method is not allowed.
 function maxOfTwoNumbers(x, y) {
     if (x >= y) {
       return x;
@@ -66,8 +68,50 @@ function maxOfTwoNumbers(x, y) {
     // return  x >= y ? x : y;
   }
   
-  console.log(maxOfTwoNumbers(3, 9));
+  console.log("js-functions-lab #1: " + maxOfTwoNumbers(3, 9));
   
-  // 2.
 
-  
+// 2.
+// Define a function, as a function expression, maxOfThree that takes three numbers as arguments and returns the largest of them. Again, the Math.max method is not allowed.
+
+// define a function named maxOfThree, with three variables, one for each numnber
+const maxOfThree = function(num1, num2, num3) {
+    //if num1 is greater than num2 and num3, then return num1
+    if ((num1 >= num2) && (num1 >= num3)) {
+        return num1;
+    //if num2 is greater than num1 and num3, then return num2
+    } else if ((num2 >= num1) && (num2 >= num3)) {
+        return num2;
+    //if both the ifs above aren't true, return num3
+    } else {
+        return num3;
+    };
+};
+
+//print string along with largest number of the 3 numbers entered
+console.log("js-functions-lab #2: " + maxOfThree(3, 9, 4));
+
+
+// 3.
+// Define a function, as a function declaration, isCharAVowel that takes a character as an argument and returns true if it is a vowel, false otherwise.
+
+// define a function named isCharAVowel with char as the parameter
+function isCharAVowel(char) {
+    // define array of vowels
+    const vowels = ["A", "E", "I", "O", "U"];
+    
+    let vowelCount = 0;
+
+    vowels.forEach(function(vowel) {
+        if ((char.toUpperCase()) === vowel) {
+            vowelCount += 1;
+        };
+    });
+
+    return vowelCount ? true : false;
+};
+
+console.log(`js-functions-lab #3: O is a vowel. True or false? ${isCharAVowel("O")}`);
+console.log(`js-functions-lab #3: B is a vowel. True or false? ${isCharAVowel("b")}`);
+
+
