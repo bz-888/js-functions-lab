@@ -57,9 +57,14 @@ playerFour = getPlayerUserName('Kevin');
 
 // 1.
 // Define a function, as a function declaration, maxOfTwoNumbers that takes two numbers as arguments and returns the largest of them. If they are the same, return that number. Use the if-else construct or a ternary expression - the Math.max method is not allowed.
+
+// define function with two parameters
 function maxOfTwoNumbers(x, y) {
+
+    // if x is greater than or equal to y, return/produce x
     if (x >= y) {
       return x;
+      // otherwise, y must be greater, so return/produce y
     } else {
       return y;
     }
@@ -68,6 +73,7 @@ function maxOfTwoNumbers(x, y) {
     // return  x >= y ? x : y;
   }
   
+  // print result
   console.log("js-functions-lab #1: " + maxOfTwoNumbers(3, 9));
   
 
@@ -100,17 +106,24 @@ function isCharAVowel(char) {
     // define array of vowels
     const vowels = ["A", "E", "I", "O", "U"];
     
+    // define and set variable to falsy
     let vowelCount = 0;
 
+    // iterate through the vowels array defined and assigned above and compare each vowel to the char provided
     vowels.forEach(function(vowel) {
         if ((char.toUpperCase()) === vowel) {
+
+            // if it's a match, meaning if it's a vowel, add 1 to the vowelCount sum, making the variable truthy
             vowelCount += 1;
         };
     });
 
+    // if none of the vowels in the vowels array match the provided char argument, the value of vowelCount is zero so it's falsy; otherwise, it's 1, making it truthy
+    // if it's truthy / true, the returned output is true; if it's falsy / false, the returned output is false
     return vowelCount ? true : false;
 };
 
+// print results
 console.log(`js-functions-lab #3: O is a vowel. True or false? ${isCharAVowel("O")}`);
 console.log(`js-functions-lab #3: B is a vowel. True or false? ${isCharAVowel("b")}`);
 
@@ -118,31 +131,45 @@ console.log(`js-functions-lab #3: B is a vowel. True or false? ${isCharAVowel("b
 // 4.
 // Define a function, as a function expression, sumArray that takes an array of numbers and returns the sum of those numbers. For example, sumArray([2, 4, 5]); would return 11.
 
+// define function with a parameter named array
 const sumArray = function(array) {
+
+    // define a variable so the numbers in the array have something they can be added onto
     let sum = 0;
 
+    // iterate through the array of numbers and add each number, labeled num, to the sum variable
     array.forEach(function(num) {
         sum += num;
     })
 
+    // return/produce the value of sum
     return sum;
 };
 
+// print results
 console.log(`js-functinos-lab #4: sumArray([1, 2, 3, -1]) === ${sumArray([1, 2, 3, -1])}`);
 
 
 // 5.
 // Define a function, as a function declaration, multiplyArray that takes an array of numbers and returns the product those numbers. For example, multiplyArray([2, 4, 5]); would return 40.
 
+// define a function with a parameter
 function multiplyArray(array) {
+
+    // use one as a impactless factor to multiply the first number against and have product serve as the variable which will eventually hold our desired final value
     let product = 1;
+
+    // iterate through the array of numbers, calling each number num
     array.forEach(function(num) {
+        // multiply the first num by 1 then multiply each following num by the previous product
         product = product * num;
     });
 
+    // have the function return/produce the final product
     return product;
 };
 
+//print results
 console.log(`js-functions-lab #5: multiplyArray([2, 4, 5]) === ${multiplyArray([2, 4, 5])} `);
 
 
@@ -156,6 +183,26 @@ const numArgs = function() {
 };
 
 //print string and execute the function which will return the length of the arguments
-console.log(`js-function-lab #6: numArgs(5, "hello", false) === ${numArgs(5, "hello", false)}`);
+console.log(`js-functions-lab #6: numArgs(5, "hello", false) === ${numArgs(5, "hello", false)}`);
 
 
+// 7.
+// Define a function, as a function declaration, reverseString that takes a string, reverses the characters, and returns it. For example, reverseString('rockstar'); would return the string "ratskcor".
+
+// define a function named reverseString where the parameter is the inputText
+function reverseString(inputText) {
+    // define an empty array to serve as the placeholder for the reversed letters
+    const reverseArray = [];
+    
+    // loop through the string from the beginning 0 index to the final index of the string
+    for (i = 0; i < inputText.length; i++) {
+        // add each letter to the beginning of the array, effectively reversing the order of the letters
+        reverseArray.unshift(inputText.charAt(i));
+    };
+
+    // join the letters together without a delimiting character such as a comma
+    return reverseArray.join("");
+};
+
+// print results
+console.log(`js-functions-lab #7: reverseString("rockstar") === ${reverseString("rockstar")}`);
