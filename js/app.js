@@ -231,3 +231,29 @@ const longestStringInArray = function(stringArray) {
 
 // print results
 console.log(`js-functions-lab #8: longestStringInArray(["cat", "blue", "Blue cat"]) === ${longestStringInArray(["cat", "blue", "Blue cat"])}`);
+
+
+// 9.
+// Define a function, as a function declaration, stringsLongerThan that takes an array of strings and a number as arguments; and returns an array of the strings that are longer than the number passed in. For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); would return ["hello", "morning"].
+
+// define a function with two parameters, one for the array of strings and one for the minimum length of a string that we want
+function stringsLongerThan(array, min) {
+    
+    // define a placeholder array to place in the strings that we want
+    const outputArray = [];
+
+    // iterate through the array of strings, calling each string the array stringEntry
+    array.forEach(function(stringEntry) {
+
+        // if stringEntry's length is greater than the min argument, then push stringEntry into the outputArray
+        if (stringEntry.length > min) {
+            outputArray.push(stringEntry);
+        };
+    });
+
+    // give us the outputArray
+    return outputArray;
+};
+
+// print results
+console.log(`js-functions-lab #9: stringsLongerThan(["say", "hello", "in", "the", "morning"], 3) === ${stringsLongerThan(["say", "hello", "in", "the", "morning"], 3)}`);
