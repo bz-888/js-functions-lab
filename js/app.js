@@ -206,3 +206,28 @@ function reverseString(inputText) {
 
 // print results
 console.log(`js-functions-lab #7: reverseString("rockstar") === ${reverseString("rockstar")}`);
+
+
+// 8.
+// Define a function, as a function expression, longestStringInArray that takes an array of strings as an argument and returns the length of the longest string.
+
+// define a function and use stringArray as a parameter
+const longestStringInArray = function(stringArray) {
+    
+    // set a base level maximum length to compare against
+    let maxLength = 0;
+
+    // iterate through the array of strings calling each string in the array stringEntry
+    stringArray.forEach(function(stringEntry) {
+        // if the length of stringEntry is longer than the current maximum length, replace the previous maximum length with the length of the current string in question
+        if (stringEntry.length > maxLength) {
+            maxLength = stringEntry.length;
+        };
+    });
+
+    // after iterating through the array of strings, output the longest length found
+    return maxLength;
+};
+
+// print results
+console.log(`js-functions-lab #8: longestStringInArray(["cat", "blue", "Blue cat"]) === ${longestStringInArray(["cat", "blue", "Blue cat"])}`);
